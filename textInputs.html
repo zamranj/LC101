@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextInputs</title>
+    <style>
+        label{
+            display:block;
+            margin: 5px;
+        }
+    </style>
+    
+</head>
+    <body>
+        <form action ="https://handlers.education.launchcode.org/request-parrot" method="POST">
+            <label>Code Name <input type="text" name="codeName"/></label>
+            <lable>Code Word <input type="password" name="codeWord"/></lable>
+            <lable style="display: block;">
+                <textarea name="description" rows="5" cols="75"></textarea>
+            </lable>
+            <button>Send Report</button>
+    
+        </form>
+    </body>
+</html>
