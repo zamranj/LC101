@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">
+        <div>
+            <label>I have a cat</label>
+            <input type="radio" name="pet" value="cat" checked>
+        </div>       
+        
+        <div>
+            <label>I have a dog</label>
+            <input type="radio" name="pet" value="dog">
+        </div>        
+        
+        <div>
+            <label>I have neither a cat or a dog</label>
+            <input type="radio" name="pet" value="neither">
+        </div>       
+        
+        <div>
+            <label>I agree to the terms of service</label>
+            <input type="checkbox" name="termsOfService">
+        </div>        
+        
+        <div>
+            <button type="submit">Submit</button>
+        </div>   
+    </form> 
+
+    <script>
+        window.addEventListener("load", function() {
+            let form = document.querySelector("form");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault()
+                let pet = document.querySelector("input[name=pet]:checked");
+                let termsOfService = document.querySelector("input[name=termsOfService]")
+                console.log("TERMS: " + termsOfService.checked)
+                console.log("PET: " + pet.value)
+                if (pet.value === "neither") {
+                    alert("Must have a dog or cat!");
+                }
+                if (termsOfService.checked === false) {
+                    alert("Please agree to the Terms Of Service")
+                }
+            });
+        });
+    </script>
+</body>
+</html>
