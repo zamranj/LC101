@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>checkBoxInputs</title>
+    <style>
+        label{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+     <form action="https://handlers.education.launchcode.org/request-parrot" method="post">
+        <!-- single checkbox -->
+        <label>crew<input type="checkbox" name="crewReady"/></label>
+
+        <!-- group with different name -->
+        <h3>Activities</h3>
+        <label>cooking<input type="checkbox" name="cooking"/></label>
+        <label>running<input type="checkbox" name="running"/></label>
+        <label>movies<input type="checkbox" name="movies"/></label>
+  
+        <!-- group all with same name -->
+        <h3>Ingredients</h3>
+        <label>Onion<input type="checkbox" name="ingredient" value="onion"/></label>
+        <label>Butter<input type="checkbox" name="ingredient" value="butter"/></label>
+        <label>Rice<input type="checkbox" name="ingredient" value="rice"/></label>
+        <button>Send Report</button>
+    </form>
+    
+</body>
+</html>

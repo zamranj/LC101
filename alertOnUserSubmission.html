@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>alertOnSubmission</title>
+      <style>
+          label {display: block; padding: 2px;}
+          body {padding: 20px;}
+      </style>
+</head>
+<script>
+     window.addEventListener("load", function(){
+         let form = document.querySelector("form");
+         form.addEventListener("submit", function(){
+             let usernameInput = document.querySelector("input[name=username]");
+             let teamName = document.querySelector("input[name=team]");
+             if(usernameInput.value ===""|| teamName.value === ""){
+                 alert("All fields are required")
+                 event.preventDefault();
+             }
+         })
+     })
+</script>
+    <body>
+        <form method="POST" action="https://handlers.education.launchcode.org/request-parrot">
+            <label>Username: <input type="text" name="username"/></label>
+            <label>Team Name: <input type="text" name="teamName"/></label>
+            <button>Submit</button>
+        </form>
+    </body>
+</html>

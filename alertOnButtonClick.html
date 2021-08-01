@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+      <title>adding alert when button is clicked</title>
+      <style>
+          label {display: block; padding: 2px;}
+          body {padding: 20px;}
+      </style>
+</head>
+<script>
+     window.addEventListener("load", function(){
+         let form = document.querySelector("form");
+         form.addEventListener("submit", function(){
+             alert("Submit button clicked");
+         })
+     })
+</script>
+    <body>
+        <form method="POST" action="https://handlers.education.launchcode.org/request-parrot">
+            <label>Username: <input type="text" name="username"/></label>
+            <label>Password: <input type="text" name="password"/></label>
+            <button>Submit</button>
+        </form>
+    </body>
+</html>
