@@ -1,0 +1,45 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8">
+	
+</head>
+
+<body>
+
+	<form id="searchForm" method="GET" action="">
+    <!-- TODO: add form elements -->
+	<input type="text" name="q"/>
+	<input type="radio" name="engine" value="google"/><label>Google</label>
+	<input type="radio" name="engine" value="duckduckGo"/><label>DuckDuckgo</label>
+	<input type="radio" name="engine" value="bing"/><label>Bing</label>
+	<input type="radio" name="engine" value="ask"/><label>ask</label>
+	<button> Go</button>
+	</form>
+
+	<script>
+		// TODO: create a handler
+		
+		
+    window.addEventListener("load", function(){
+        // TODO: register the handler
+		let actions ={
+			"google":"https://google.com/?q=",
+			"bing":"https://bing.com/?q=",
+			"ask": "https://ask.com/?q=",
+			"duckduckGo":"https://duckduckgo.com/?q="
+		}
+
+		event.preventDefault();
+		let form = document.getElementById("searchForm");
+
+		form.addEventListener("submit", function() {
+			let engine = document.querySelector("input[name=engine]:checked").value;
+			let actionURL = actions[engine];
+			let query = document.querySelector("input[name=q]").value;
+			form.action = actionURL+query;
+		});
+
+    });
+	</script>
+</body>
